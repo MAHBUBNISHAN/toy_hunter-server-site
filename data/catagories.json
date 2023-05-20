@@ -1,0 +1,64 @@
+ [
+      {
+        "id": "001",
+        "category": "Action Figures",
+        "seller": "ToyWorld",
+        "price": 19.99
+      },
+      {
+        "id": "002",
+        "category": "Dolls",
+        "seller": "KidsToys",
+        "price": 14.99
+      },
+      {
+        "id": "003",
+        "category": "Building Blocks",
+        "seller": "BrickMaster",
+        "price": 29.99
+      },
+      {
+        "id": "004",
+        "category": "Puzzles",
+        "seller": "MindGames",
+        "price": 9.99
+      },
+      {
+        "id": "005",
+        "category": "Stuffed Animals",
+        "seller": "CuddlyToys",
+        "price": 12.99
+      },
+      {
+        "id": "006",
+        "category": "Board Games",
+        "seller": "FunPlay",
+        "price": 24.99
+      },
+      {
+        "id": "007",
+        "category": "Remote Control Cars",
+        "seller": "SpeedRacers",
+        "price": 39.99
+      },
+      {
+        "id": "008",
+        "category": "Art and Craft Kits",
+        "seller": "CreativeMinds",
+        "price": 17.99
+      },
+      {
+        "id": "009",
+        "category": "Outdoor Sports",
+        "seller": "ActiveKids",
+        "price": 29.99
+      },
+      {
+        "id": "010",
+        "category": "Educational Toys",
+        "seller": "LearnSmart",
+        "price": 16.99
+      }
+    ]
+  
+  
