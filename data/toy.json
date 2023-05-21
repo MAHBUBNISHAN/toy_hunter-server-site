@@ -1,0 +1,129 @@
+[
+    {
+      "id": "001",
+      "category": "Action Figures",
+      "seller": "ToyWorld",
+      "price": 19.99 ,
+      "img" :"https://media.istockphoto.com/id/1017309510/photo/box-of-toys-on-the-floor-teddy-bear-in-box-vintage-tone-charitable-contribution-donation.jpg?s=612x612&w=0&k=20&c=PS2qfHXOkWTXNpWz4DN6snecYWa-EXqexW7j2VkxGAw="
+    },
+    {
+      "id": "002",
+      "category": "Dolls",
+      "seller": "KidsToys",
+      "price": 14.99 ,
+      "img" :"https://www.shutterstock.com/image-vector/kids-toys-train-plane-castle-260nw-1862895565.jpg"
+    },
+    {
+      "id": "003",
+      "category": "Building Blocks",
+      "seller": "BrickMaster",
+      "price": 29.99 ,
+      "img" :"https://www.google.com/search?q=image+of+toys&source=lmns&bih=664&biw=1519&hl=en&sa=X&ved=2ahUKEwjWhcTL64X_AhXv1XMBHesFC1sQ_AUoAHoECAEQAA#imgrc=Cd7BGOfpVNB6_M"
+    },
+    {
+      "id": "004",
+      "category": "Puzzles",
+      "seller": "MindGames",
+      "price": 9.99 ,
+      "img" :"https://media.istockphoto.com/id/687165852/photo/toys.jpg?b=1&s=170667a&w=0&k=20&c=aECJBVRGL3jNtrbiHOTMq1-5rSv3xeNUpZywEZYwvX4="
+    },
+    {
+      "id": "005",
+      "category": "Stuffed Animals",
+      "seller": "CuddlyToys",
+      "price": 12.99 ,
+      "img" :"https://media.istockphoto.com/id/1322274556/photo/collection-of-different-toys-on-wooden-table.jpg?b=1&s=170667a&w=0&k=20&c=xgakHJwSN4-QD8cnzEfYyiy2AFpyJ7zywWA8a1lf3Xw="
+    },
+    {
+      "id": "006",
+      "category": "Board Games",
+      "seller": "FunPlay",
+      "price": 24.99 ,
+      "img" :"https://media.istockphoto.com/id/687165852/photo/toys.jpg?b=1&s=170667a&w=0&k=20&c=aECJBVRGL3jNtrbiHOTMq1-5rSv3xeNUpZywEZYwvX4="
+    },
+    {
+      "id": "007",
+      "category": "Remote Control Cars",
+      "seller": "SpeedRacers",
+      "price": 39.99 ,
+      "img" :"https://m.media-amazon.com/images/I/81SZ7ZyTJ8S._AC_SL1500_.jpg"
+    },
+    {
+      "id": "008",
+      "category": "Art and Craft Kits",
+      "seller": "CreativeMinds",
+      "price": 17.99 ,
+      "img" :"https://www.dontwasteyourmoney.com/wp-content/uploads/2022/08/magic-mixies-pet-potion-little-girls-toy-little-girls-toys-224x300.jpg"
+    },
+    {
+      "id": "009",
+      "category": "Outdoor Sports",
+      "seller": "ActiveKids",
+      "price": 29.99 ,
+      "img" :"https://nationaltoday.com/wp-content/uploads/2023/01/ALLCELE-RC-Robot-500x390.png"
+    },
+    {
+      "id": "010",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 16.99 ,
+      "img" :"https://images-na.ssl-images-amazon.com/images/I/61WUjHj1VBL.jpg"
+    },
+    {
+      "id": "011",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 87.80 ,
+      "img" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Lj-zdl3KqRG-tu7aq39KThM88WEQZT3eIA&usqp=CAU"
+    },
+    {
+      "id": "012",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 23.76,
+      "img" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Lj-zdl3KqRG-tu7aq39KThM88WEQZT3eIA&usqp=CAU"
+    },
+    {
+      "id": "013",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 10.88 ,
+      "img" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSW7zapTNuvd8WvoTSvY5X-Ahc1YabPe4OQw&usqp=CAU"
+    },
+    {
+      "id": "014",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 15.88 ,
+      "img" :"https://cdn.shopify.com/s/files/1/0559/3910/4829/products/s9c8nnc3t2tdupj4vrmh.jpg?v=1655928666"
+    },
+    {
+      "id": "015",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 16.79,
+      "img" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSW7zapTNuvd8WvoTSvY5X-Ahc1YabPe4OQw&usqp=CAU"
+    },
+    {
+      "id": "016",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 14.99 ,
+      "img" :"https://cdn.shopify.com/s/files/1/0559/3910/4829/products/s9c8nnc3t2tdupj4vrmh.jpg?v=1655928666"
+    },
+    {
+      "id": "017",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 16.55 ,
+      "img" :"https://media.istockphoto.com/id/867830532/photo/wooden-toys-on-white-background-3d-rendering.jpg?s=612x612&w=0&k=20&c=nFp5PMl2r5_nC1jjpFRTHqZOd4XnSFHlSu147x7943I="
+    },
+    {
+      "id": "018",
+      "category": "Educational Toys",
+      "seller": "LearnSmart",
+      "price": 18.99 ,
+      "img" :"https://media.istockphoto.com/id/867830532/photo/wooden-toys-on-white-background-3d-rendering.jpg?s=612x612&w=0&k=20&c=nFp5PMl2r5_nC1jjpFRTHqZOd4XnSFHlSu147x7943I="
+    }
+  ]
+
