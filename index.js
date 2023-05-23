@@ -4,14 +4,13 @@ const app = express();
 
 const cors = require ('cors');
 const port =process.env.PORT || 5000;
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const catagories= require('./data/catagories.json');
 const toy = require('./data/toy.json')
 
 
-// toyHunter 
-// FbSJ6lPaGud7wl0c
+
 app.use(cors());
 app.use(express.json());
 
@@ -34,9 +33,43 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
+
+    const categoryCollection=client.db('toyHunter').collection('categories');
+    const bookingCollection=client.db('toyHunter').collection('bookings');
+   
+
+    app.get('/categories', async(req,res)=>{
+      const cursor =categoryCollection.find();
+      const result =await cursor.toArray();
+      res.send(result);
+    })
+
+    app.get('/categories/:id', async(req,res)=>{
+      const id =req.params.id;
+      const query ={_id: new ObjectId(id)}
+
+      const options={
+        projection:{category:1, seller:1,price:1}
+      }
+      const result = await categoryCollection.findOne(query,options);
+      res.send(result);
+    })
+    //bookings
+    app.get('/bookings',async(req,res)=>{
+      const result=await bookingCollection.find().toArray();
+      res.send(result);
+    })
+
+    app.post('/bookings', async (req, res) => {
+      const booking = req.body;
+      console.log(booking);
+      const result = await bookingCollection.insertOne(booking);
+      res.send(result);
+  });
+
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
