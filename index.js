@@ -10,8 +10,14 @@ const catagories= require('./data/catagories.json');
 const toy = require('./data/toy.json')
 
 
+const corsConfig = {
+  origin: '',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
+app.use(cors())
+app.options("", cors(corsConfig))
 
-app.use(cors());
 app.use(express.json());
 
 console.log(process.env.DB_PASS);
@@ -33,28 +39,110 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
+    client.connect();
 
     const categoryCollection=client.db('toyHunter').collection('categories');
     const bookingCollection=client.db('toyHunter').collection('bookings');
    
 
     app.get('/categories', async(req,res)=>{
-      const cursor =categoryCollection.find();
-      const result =await cursor.toArray();
+      // get all from categories collection sorted ascending by createdAt
+      
+      // const result = await categoryCollection.find().toArray();
+      const result = await categoryCollection.find().limit(20).toArray();
+
       res.send(result);
+    })
+
+    app.get("/set", async (req,res)=>{
+      // fetch the categories and add some data and update all those categories
+      const categories = await categoryCollection.find().toArray();
+      const updatedCategories = categories.map(category => {
+        return {
+          ...category,
+          sellerEmail: "test@gmail.com",
+          sellerName: "test",
+          name:"Toy Name",
+          description:"Toy Description",
+          quantity: 10,
+          category: "Toy Category",
+        }
+      });
+      updatedCategories.forEach(async category => {
+        const query = { _id: new ObjectId(category._id) };
+        const updateDoc = {
+          $set: {
+            ...category
+
+          }
+        };
+        await categoryCollection.updateOne(query, updateDoc);
+      });
+      res.send("done");
+
     })
 
     app.get('/categories/:id', async(req,res)=>{
-      const id =req.params.id;
+      const id = req.params.id;
       const query ={_id: new ObjectId(id)}
 
-      const options={
-        projection:{category:1, seller:1,price:1}
-      }
-      const result = await categoryCollection.findOne(query,options);
+      // const options={
+      //   projection:{category:1, seller:1,price:1}
+      // }
+
+      const result = await categoryCollection.findOne(query);
       res.send(result);
     })
+
+    app.post('/toy', async (req, res) => {
+      const toy = req.body;
+      // console.log(toy);
+      const result = await categoryCollection.insertOne(toy);
+      res.send(result);
+    })
+
+    app.get('/toy/:id', async (req, res) => {
+
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await categoryCollection.findOne(query);
+      console.log(result)
+      res.send(result);
+
+
+    });
+
+
+    app.get('/toys/:email', async (req, res) => {
+
+      // get categories that are created by the logged in user
+      const email = req.params.email;
+      const query = { sellerEmail: email };
+      const result = await categoryCollection.find(query).toArray();
+      res.send(result);
+    })
+
+    app.patch('/toy/:id', async (req, res) => {
+      // update the category with the given id
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const updateDoc = {
+        $set: {
+          ...req.body
+        }
+      };
+      const result = await categoryCollection.updateOne(query, updateDoc);
+      res.send(result);
+    });
+
+    app.delete('/toy/:id', async (req, res) => {
+      // delete the category with the given id
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await categoryCollection.deleteOne(query);
+      res.send(result);
+
+    });
     //bookings
     app.get('/bookings',async(req,res)=>{
       const result=await bookingCollection.find().toArray();
@@ -90,6 +178,11 @@ app.get('/catagories',(req,res)=>{
 app.get('/toy',(req,res)=>{
     res.send(toy)
 })
+app.get('/toy/:id',(req,res)=>{
+    const id =req.params.id;
+    const singleToy = toy.find(toy=>toy.id===id);
+    res.send(singleToy)
+})
 app.listen(port,()=>{
-    console.log(`toy is working on port:${port} `)
+    console.log(`toy is working on http://localhost:${port} `)
 })
